@@ -16,7 +16,7 @@ Mostrar o peso e multa com duas casas decimais
     >>> ex_14_joao_papo_de_pescador.calcular_peso_excedente_e_multa()
     O peso excedente de peixes é de 12.35 kg
     Por isso, a multa é de R$ 49.40
-    >>> ex_14_joao_papo_de_pescador.input = lambda k: '50'
+    >>> ex_14_joao_papo_de_pescador.input = lambda k: '49'
     >>> ex_14_joao_papo_de_pescador.calcular_peso_excedente_e_multa()
     O peso excedente de peixes é de 0.00 kg
     Por isso, a multa é de R$ 0.00

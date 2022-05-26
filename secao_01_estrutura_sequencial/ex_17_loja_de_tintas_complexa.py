@@ -28,5 +28,36 @@ Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, consid
 """
 
 
+from math import ceil
+
+
 def calcular_latas_e_preco_de_tinta():
     """Escreva aqui em baixo a sua solução"""
+    #1 litro para cada 6 metros quadrados
+    # #18,0 L -> R$80
+    # #3,6 L -> R$25
+
+    area = float(input('Digite a área em m²:'))
+    area = area * 1.1 #calcula os 10%
+    qnt_litros = ceil(area/6)
+    #PREÇO POR LATA
+    qnt_lata = ceil(qnt_litros/18)
+    preco_lata = qnt_lata * 80
+    litros_lata_restante = qnt_lata*18 - qnt_litros
+    #PREÇO POR GALÃO
+    qnt_galao = ceil(qnt_litros/3.6)
+    preco_galao = qnt_galao*25
+    litros_galao_restante = qnt_galao*3.6 - qnt_litros
+    #MAIS BARATO
+    qnt_barato_galoes = int(qnt_litros/18)
+    qnt_barato_latas = ceil(qnt_barato_galoes/3.6)
+    preco_barato = qnt_barato_galoes*80 + qnt_barato_latas*25
+    resto_barato = (qnt_barato_galoes*18 + qnt_barato_latas*3.6) - qnt_litros
+
+    print('Você deve comprar', qnt_litros, 'litros de tinta.')
+    print('Você pode comprar', qnt_lata, 'lata(s) de 18 litros a um custo de R$ %.0f.'% preco_lata,'Vão sobrar %.1f' % litros_lata_restante,'litro(s) de tinta.')
+    print('Você pode comprar', qnt_galao, 'lata(s) de 3.6 litros a um custo de R$ %.0f.'% preco_galao,'Vão sobrar %.1f' % litros_galao_restante, 'litro(s) de tinta.')
+    print('Para menor custo, você pode comprar', qnt_barato_galoes, 'lata(s) de 18 litros e', qnt_barato_latas, 'galão(ões) de 3.6 litros a um custo de R$ %.0f.' % preco_barato,
+    'Vão sobrar %.1f' % resto_barato, 'litro(s) de tinta.')
+
+
