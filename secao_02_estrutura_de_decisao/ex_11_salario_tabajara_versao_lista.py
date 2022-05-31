@@ -44,51 +44,39 @@ import string
 
 def calcular_aumento(salario: float):
     """Escreva aqui em baixo a sua solução"""
+    lista = []
+    lista = [salario]
+    valores = {}    
+    
     if salario <= 280:
-      fator_porcentagem =  1.2 #aumento de 20%
-      str_porcentagem = '20%'
+      salario =  salario * 1.2 #aumento de 20%
+      lista.extend(['20%', salario]) 
 
     elif salario <= 700:
-      fator_porcentagem = 1.15
-      str_porcentagem = '15%'
+      salario =  salario * 1.15
+      lista.extend(['15%', salario]) 
 
     elif salario <= 1500:
-      fator_porcentagem = 1.1
-      str_porcentagem = '10%'
+      salario = salario * 1.1
+      lista.extend(['10%', salario]) 
 
     else: 
-      fator_porcentagem =  1.05
-      str_porcentagem = '5%'
+      salario = salario * 1.05
+      lista.extend(['5%', salario]) 
 
-    salario_novo = salario * fator_porcentagem
-    aumento = salario_novo - salario
-    
-    print('Salário atual: R$ %.2f' % salario)
-    print('Aumento porcentual:' , str_porcentagem)
-    print('Valor do aumento: R$ %.2f' % aumento)
-    print('Novo salário: R$ %.2f' % salario_novo)
+    diferenca = salario - lista[0]
+    lista.extend([diferenca]) 
 
+    #PRA DEIXAR OS VALORES DA LISTA LEGÍVEIS
+    valores['salario_antigo'] = lista[0]
+    valores['percentual'] = lista[1]
+    valores['aumento'] = lista[3]
+    valores['salario_novo'] = lista[2]
 
-    
-
-
-    # -------------SOLUÇÃO SALÁRIO-----------------------
-
-    #     dicionario = {}
-    # if salario <= 280:
-    #   dicionario['percentual'] = 0.2
-    # elif salario <= 700:
-    #   dicionario['percentual'] = 0.15
-    # elif salario <= 1500:
-    #   dicionario['percentual'] = 0.1
-    # else:
-    #   dicionario['percentual'] = 0.05
-    
-    # dicionario['aumento'] = salario * dicionario['percentual']
-    # dicionario['salario_novo'] = salario + dicionario['aumento']
-
-    # print(dicionario)
-
+    print('Salário atual: R$ %.2f' % valores['salario_antigo'])
+    print('Aumento porcentual:', valores['percentual'])
+    print('Valor do aumento: R$ %.2f' % valores['aumento'])
+    print('Novo salário: R$ %.2f' % valores['salario_novo'])
     
 
     
