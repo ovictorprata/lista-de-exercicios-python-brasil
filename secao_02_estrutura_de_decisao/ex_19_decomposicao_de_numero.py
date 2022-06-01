@@ -58,5 +58,14 @@ def decompor_numero(numero: int):
         print("'O número precisa ser positivo'")
     else:
         #TESTAR CENTENA
-        if numero % 100 == 1:
-            centena = '1 centena'
+        if numero / 100 == 1:
+            centena = 1
+        elif (numero / 100) <= 9:
+            centena = int(numero / 100) #armazena dígito da centena
+    
+    if centena == 1:
+        str_centena = 'centena'
+    else:
+        str_centena = 'centenas'
+
+    print(f"'{numero} = {centena} {str_centena}'")

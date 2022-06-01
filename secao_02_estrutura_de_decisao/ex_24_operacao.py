@@ -58,5 +58,7 @@ def fazer_operacao_e_classificar(n_1: float, n_2: float, operacao: str):
       dec_ou_int = 'decimal'
 
     print(f'Resultado: {resultado:.2f}')
+
+    if dec_ou_int == 'decimal':
     print('Número é ' + par_ou_impar + ', ' + positivo_negativo + ' e ' + dec_ou_int + '.')
 

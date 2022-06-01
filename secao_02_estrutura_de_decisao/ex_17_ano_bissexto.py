@@ -20,8 +20,15 @@ bissexto.
 
 def eh_ano_bissexto(ano: int):
     """Escreva aqui em baixo a sua solução"""
-    if (ano % 4) == 0 and (ano % 100)!= 0:
+    if (ano % 4) == 0: 
+        if (ano % 100) != 0:
             ano = True
+        elif (ano % 400) ==0:
+            ano = True
+        else:
+            ano = False
     else:
         ano = False
-    print(ano) 
+    
+    return ano
+
