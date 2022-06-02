@@ -52,13 +52,18 @@ def fazer_operacao_e_classificar(n_1: float, n_2: float, operacao: str):
     else:
       positivo_negativo = 'positivo'
     
-    if (resultado % int(resultado)) == 0:
+    if resultado == 0:
       dec_ou_int = 'inteiro'
     else: 
-      dec_ou_int = 'decimal'
+      if (resultado % int(resultado)) == 0:
+        dec_ou_int = 'inteiro'
+      else: 
+        dec_ou_int = 'decimal'
 
     print(f'Resultado: {resultado:.2f}')
 
-    if dec_ou_int == 'decimal':
-    print('Número é ' + par_ou_impar + ', ' + positivo_negativo + ' e ' + dec_ou_int + '.')
+    if dec_ou_int == 'inteiro':
+      print('Número é ' + par_ou_impar + ', ' + positivo_negativo + ' e ' + dec_ou_int + '.')
+    else:
+      print('Número é ' + positivo_negativo + ' e ' + dec_ou_int + '.')
 

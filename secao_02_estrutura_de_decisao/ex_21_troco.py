@@ -27,10 +27,63 @@ uma nota de 5 e quatro notas de 1.
 
 def calcular_troco(valor: int) -> str:
     """Escreva aqui em baixo a sua solução"""
-    tipos_de_notas = [1, 5, 10, 50, 100]
-    pedacos=[]
-    resto = valor
-    while resto > 0:
-        tipo_de_nota = tipos_de_notas.pop()
-    if len(pedacos)==1:
-        return pedacos.pop()
+    nota_100 = valor // 100
+    valor = valor - nota_100*100
+
+    nota_50 = valor // 50
+    valor = valor - nota_50*50
+
+    nota_10 = valor // 10
+    valor = valor - nota_10*10
+
+    nota_5 = valor // 5
+    valor = valor - nota_5*5
+
+    nota_1 = valor // 1
+
+    #USO DO S
+    if nota_100 > 1:
+        plural_100 = f'{nota_100} notas de R$ 100'
+    else:
+        plural_100 = f'{nota_100} nota de R$ 100'
+
+    if nota_50 > 1:
+        plural_50 = f'{nota_50} notas de R$ 50'
+    else:
+        plural_50 = f'{nota_50} nota de R$ 50'
+
+    if nota_10 > 1:
+        plural_10 = f'{nota_10} notas de R$ 10'
+    else:
+        plural_10 = f'{nota_10} nota de R$ 10'
+    
+    if nota_5 > 1:
+        plural_5 = f'{nota_5} notas de R$ 5'
+    else:
+        plural_5 = f'{nota_5} nota de R$ 5'
+    
+    if nota_1 > 1:
+        plural_1 = f'{nota_1} notas de R$ 1'
+    else:
+        plural_1 = f'{nota_1} nota de R$ 1'
+
+    #CODIGO FUNCIONA PARA AS NOTAS ACIMA, O RACIOCÍNIO ESTÁ CORRETO, MAS O OUTPUT NÃO FUNCIONA PARA OUTRAS OPÇÕES
+    if nota_100 > 0 and nota_50 > 0 and nota_10 > 0 and nota_5 > 0 and nota_1 > 0:
+            print(f"'{plural_100}, {plural_50}, {plural_10}, {plural_5} e {plural_1}'")
+    if nota_100 > 0 and nota_50 > 0 and nota_10 == 0 and nota_5 > 0 and nota_1 > 0:
+        print(f"'{plural_100}, {plural_50}, {plural_5} e {plural_1}'")
+
+    elif nota_100 == 0 and nota_50 == 0 and nota_10 == 0 and nota_5 == 0 and nota_1 > 0:
+        print(f"'{plural_1}'")
+
+    elif nota_100 == 0 and nota_50 == 0 and nota_10 == 0 and nota_5 > 0 and nota_1 == 0:
+        print(f"'{plural_5}'")
+
+    elif nota_100 == 0 and nota_50 == 0 and nota_10 > 0 and nota_5 == 0 and nota_1 == 0:
+        print(f"'{plural_10}'")
+
+    elif nota_100 == 0 and nota_50 == 0 and nota_10 > 0 and nota_5 == 0 and nota_1 > 0:
+        print(f"'{plural_10} e {plural_1}'")
+
+
+

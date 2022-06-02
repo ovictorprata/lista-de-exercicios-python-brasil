@@ -114,5 +114,3 @@ def decompor_numero(numero: int):
 
         elif centena == 0 and dezena == 0 and unidade > 0:
             print(f"'{numero_inicial} = {str_unidade}'")
-
-
