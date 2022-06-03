@@ -82,12 +82,12 @@ def calcular_preco_da_compra(kilos_de_morango: int, kilos_de_maca: int):
     total = total - total_desconto
     
     if kilos_de_morango > 0:
-        str_morango = f'(+)  Morango  - valor:  R$ {custo_morango:.2f} - quantidade:  {kilos_de_morango} kg - preço: R$ {preco_kg_morango:.2f}/kg'
+        str_morango = f'(+)  Morango  - valor:  R$ {custo_morango:5.2f} - quantidade:  {kilos_de_morango} kg - preço: R${preco_kg_morango:5.2f}/kg'.format(custo_morango)
     else: 
         str_morango = ''
     
     if kilos_de_maca > 0:
-        str_maca = f'(+)  Maça     - valor:  R$ {custo_maca:.2f} - quantidade:  {kilos_de_maca} kg - preço: R$ {preco_kg_maca:.2f}/kg'
+        str_maca = f'(+)  Maça     - valor:  R$ {custo_maca:5.2f} - quantidade:  {kilos_de_maca} kg - preço: R${preco_kg_maca:5.2f}/kg'
     else: 
         str_maca = ''
 
@@ -99,8 +99,8 @@ def calcular_preco_da_compra(kilos_de_morango: int, kilos_de_maca: int):
         print(str_morango)
         print(str_maca)
 
-    print(f'(-)  Desconto - valor:  R$ {total_desconto:.2f}')
-    print(f'          Valor Total:  R$ {total:.2f}')
+    print(f'(-)  Desconto - valor:  R$ {total_desconto:5.2f}')
+    print(f'          Valor Total:  R$ {total:5.2f}')
 
 
 
