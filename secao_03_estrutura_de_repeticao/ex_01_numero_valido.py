@@ -39,8 +39,8 @@ def obter_numero_valido():
     #     nota = print('Número inválido:', nota)
     # print(nota)
 
-valida = 0
-while valida < 1:
+contador = 0
+while contador < 1:
     nota = input('Digite a nota entre 0 e 10: ')
     if nota.isdigit() == True:
         nota = int(nota)
@@ -48,7 +48,7 @@ while valida < 1:
             print('Número inválido:', nota)
         else:
             print(nota)
-            valida += +1
+            contador += +1
     else:
         print('Número inválido:', nota)
         continue
