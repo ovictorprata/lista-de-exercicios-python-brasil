@@ -39,3 +39,22 @@ divisível somente por ele mesmo e por 1.
 
 def eh_primo(n: int) -> bool:
     """Escreva aqui em baixo a sua solução"""
+    divisores = []
+    n_inicial = n
+    while n > 0:
+        divisor = n_inicial % n
+       
+        if divisor == 0:
+            divisores.append(n)
+        n -= 1
+
+    if len(divisores) > 2:
+        return False 
+    elif len(divisores) == 2: #É PRIMO
+        return True 
+    else: #TESTE 0 e 1
+        return False 
+
+
+
+
