@@ -27,6 +27,7 @@ uma nota de 5 e quatro notas de 1.
 
 def calcular_troco(valor: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+<<<<<<< HEAD
     nota_100 = valor // 100
     valor = valor - nota_100*100
 
@@ -87,3 +88,5 @@ def calcular_troco(valor: int) -> str:
 
 
 
+=======
+>>>>>>> upstream/main
