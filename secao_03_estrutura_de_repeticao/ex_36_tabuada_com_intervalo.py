@@ -6,6 +6,10 @@ Desenvolva um programa que faça a tabuada de um número qualquer inteiro que se
 não deve necessariamente iniciar em 1 e terminar em 10, o valor inicial e final devem ser informados também pelo usuário
 Obs: Você deve verificar se o usuário não digitou o final menor que o inicial.
 
+    >>> gerar_tabuada(3, 5, 4)
+    O limite final (4) deve ser maior que o inicial (5)
+    >>> gerar_tabuada(3, 9, 1)
+    O limite final (1) deve ser maior que o inicial (9)
     >>> gerar_tabuada(1, 1, 10)
     1 X 1 = 1
     1 X 2 = 2
@@ -29,13 +33,18 @@ Obs: Você deve verificar se o usuário não digitou o final menor que o inicial
     3 X 5 = 15
     3 X 6 = 18
     3 X 7 = 21
-    >>> gerar_tabuada(3, 5, 4)
-    O limite final (4) deve ser maior que o inicial (5)
-    >>> gerar_tabuada(3, 9, 1)
-    O limite final (1) deve ser maior que o inicial (9)
+    
 
 """
 
 
 def gerar_tabuada(n: int, de: int, ate: int):
     """Escreva aqui em baixo a sua solução"""
+    n_inicial = n
+    if de > ate:
+        print(f'O limite final ({ate}) deve ser maior que o inicial ({de})')
+    else:
+        while de <= ate:
+            multiplicar = n_inicial * de
+            print(f'{n_inicial} X {de} = {multiplicar}')
+            de +=1

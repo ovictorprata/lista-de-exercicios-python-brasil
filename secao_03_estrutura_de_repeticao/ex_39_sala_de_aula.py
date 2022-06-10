@@ -15,5 +15,9 @@ representando a sua altura em centímetros. Encontre o aluno mais alto e o mais 
 """
 
 
+from posixpath import split
+
+
 def calcular_aluno_mais_baixo_e_mais_alto(*alunos) -> str:
     """Escreva aqui em baixo a sua solução"""
+    print(alunos)

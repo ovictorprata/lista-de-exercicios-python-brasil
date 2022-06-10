@@ -48,3 +48,44 @@ Mostre os valores com uma casa decimal sem arredondar.
 
 def calcular_estatiscas_do_salto(nome, *saltos):
     """Escreva aqui em baixo a sua solução"""
+    print(f'Atleta: {nome}')
+    print(f'---------------------------------')
+    print(f'Primeiro Salto: {saltos[0]} m')
+    print(f'Segundo Salto: {saltos[1]} m')
+    print(f'Terceiro Salto: {saltos[2]} m')
+    print(f'Quarto Salto: {saltos[3]} m')
+    print(f'Quinto Salto: {saltos[4]} m')
+
+    pulos = sorted(saltos)
+    maior = max(pulos)
+    menor = min(pulos)
+    pulos.pop(0)
+    pulos.pop(-1)
+
+
+    media = (sum(pulos) / len(pulos)) - 0.05
+    media = round(media, 1)
+    
+    print(f'---------------------------------')
+    print(f'Melhor salto:  {maior} m')
+    print(f'Pior salto: {menor} m')
+    print(f'Média dos demais saltos: {media} m')
+    print(f'---------------------------------')
+    print(f'Resultado final:')
+    print(f'{nome}: {media} m')
+
+    # print('Atleta: Rodrigo Curvêllo')
+    # print('---------------------------------')
+    # print('Primeiro Salto: 6.5 m')
+    # print('Segundo Salto: 6.1 m')
+    # print('Terceiro Salto: 6.2 m')
+    # print('Quarto Salto: 5.4 m')
+    # print('Quinto Salto: 5.3 m')
+    # print('---------------------------------')
+    # print('Melhor salto:  6.5 m')
+    # print('Pior salto: 5.3 m')
+    # print('Média dos demais saltos: 5.8 m')
+    # print('---------------------------------')
+    # print('Resultado final:')
+    # print('Rodrigo Curvêllo: 5.8 m')
+

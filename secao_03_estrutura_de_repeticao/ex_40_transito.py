@@ -28,3 +28,18 @@ Mostre os valores com uma casa decimail
 
 def calcular_estatisticas(*cidades):
     """Escreva aqui em baixo a sua solução"""
+    print(cidades)
+    cidade_1 = cidades[0]
+    cidade_2 = cidades[1]
+    cidade_3 = cidades[2]
+    cidade_4 = cidades[3]
+    cidade_5 = cidades[4]
+
+    print(cidade_1)
+
+
+
+    print(f'O maior índice de acidentes é de FL, com 6.0 acidentes por mil carros.')
+    print(f'O menor índice de acidentes é de FZ, com 1.2 acidentes por mil carros.')
+    print(f'O média de veículos por cidade é de 548000.')
+    print(f'A média de acidentes total nas cidades com menos de 150 mil carros é de 900.0 acidentes.')

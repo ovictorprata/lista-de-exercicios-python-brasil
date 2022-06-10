@@ -90,3 +90,29 @@ from collections import Counter
 
 def apurar_votos(*votos):
     """Escreva aqui em baixo a sua solução"""
+    cand_1 = votos.count('1')
+    cand_2 = votos.count('2')
+    cand_3 = votos.count('3')
+    cand_4 = votos.count('4')
+    nulo = votos.count('5')
+    branco = votos.count('6')
+
+    total = cand_1 + cand_2 + cand_3 + cand_4 + nulo + branco
+    porc_1 = cand_1 / total * 100
+    porc_2 = cand_2 / total * 100
+    porc_3 = cand_3 / total * 100
+    porc_4 = cand_4 / total * 100
+    porcentagem_nulo = nulo / total * 100
+    porcentagem_branco = branco / total * 100
+
+
+    #print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas}){espaco}'.ljust(54), f': R$ {bruto:8.2f}')
+
+    print(f'Código do Candidato Nome do Candidato Votos Porcentagem sobre total')
+    print(f'1                   Bostonaro'.ljust(37), f'{cand_1}'.ljust(5), f'{porc_1:5.1f}%')
+    print(f'2                   Luladrão'.ljust(37), f'{cand_2}'.ljust(5), f'{porc_2:5.1f}%')
+    print(f'3                   Dilmanta'.ljust(37), f'{cand_3}'.ljust(5), f'{porc_3:5.1f}%')
+    print(f'4                   FHC Isentão'.ljust(37), f'{cand_4}'.ljust(5), f'{porc_4:5.1f}%')
+    print(f'-------------------------------------------------------------------')
+    print(f'5                   Votos Nulos'.ljust(37), f'{nulo}'.ljust(5), f'{porcentagem_nulo:5.1f}%')
+    print(f'6                   Votos Brancos'.ljust(37), f'{branco}'.ljust(5), f'{porcentagem_branco:5.1f}%')

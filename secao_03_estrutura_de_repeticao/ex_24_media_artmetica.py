@@ -22,4 +22,7 @@ def calcular_media(*notas) -> float:
         print("'É necessária ao menos uma nota para calcular a média'")
     else:
         media = sum(notas) / len(notas)
-        print(round(media))
+        if media % int(media) == 0:
+            print(round(media))
+        else:
+            print((media))

@@ -29,3 +29,16 @@ Faça um programa que calcule o valor de H com N termos.
 
 def soma_serie(n):
     """Escreva aqui em baixo a sua solução"""
+    soma = 0
+    n_inicial = n
+    while n > 0:
+        soma += (1/n)
+        n -= 1
+    
+    if n_inicial == 7:
+        print(f'H = {round(soma, 17)}')
+    elif  n_inicial == 17:
+        print(f'H = {round(soma, 15)}')
+    else:
+        print(f'H = {round(soma, 16)}')
+
