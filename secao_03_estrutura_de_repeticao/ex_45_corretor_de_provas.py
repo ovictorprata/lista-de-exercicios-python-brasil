@@ -47,6 +47,9 @@ Gabarito da Prova:
 """
 
 
-def corrigir(*provas):
+def corrigir(provas):
     """Escreva aqui em baixo a sua solução"""
-    print(provas)
+    gabarito = ('Gabarito', 'A', 'B', 'C', 'D', 'E', 'E', 'D', 'C', 'B', 'A')
+    i = 0
+    for (nome, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10) in provas:
+        print(nome, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10)

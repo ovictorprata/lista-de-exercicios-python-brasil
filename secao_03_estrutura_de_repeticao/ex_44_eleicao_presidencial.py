@@ -105,9 +105,6 @@ def apurar_votos(*votos):
     porcentagem_nulo = nulo / total * 100
     porcentagem_branco = branco / total * 100
 
-
-    #print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas}){espaco}'.ljust(54), f': R$ {bruto:8.2f}')
-
     print(f'Código do Candidato Nome do Candidato Votos Porcentagem sobre total')
     print(f'1                   Bostonaro'.ljust(37), f'{cand_1}'.ljust(5), f'{porc_1:5.1f}%')
     print(f'2                   Luladrão'.ljust(37), f'{cand_2}'.ljust(5), f'{porc_2:5.1f}%')

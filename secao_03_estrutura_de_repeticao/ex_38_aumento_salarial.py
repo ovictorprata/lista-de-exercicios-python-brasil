@@ -36,12 +36,11 @@ def calcular_salarios_anuais(salario: float):
 
     print(f'Salário em {ano}: R${salario:8.2f}')
 
-    for i in range(5):
-        salario = salario + salario*aumento_inicial
+    for ano in range(2018, 2023):
+        salario += salario*aumento_inicial
         porc_aumento = aumento_inicial * 100
         aumento_inicial *= 2
         ano += 1
-        i += 1
         print(f'Salário em {ano}: R${salario:8.2f}. Aumento porcentual: {porc_aumento:.2f}%')
         
 

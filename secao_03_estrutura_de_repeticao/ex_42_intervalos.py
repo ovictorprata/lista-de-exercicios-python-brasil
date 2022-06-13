@@ -43,9 +43,3 @@ def listar_numeros_para_avaliacao():
     lista = input('ss')
     print(lista)
 
-
-
-    # 1 número(s) entre o intervalo de zero a 25
-    # 1 número(s) entre o intervalo de 26 a 50
-    # 1 número(s) entre o intervalo de 51 a 75
-    # 1 número(s) entre o intervalo de 76 a 100
