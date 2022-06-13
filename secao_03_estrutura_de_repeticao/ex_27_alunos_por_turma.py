@@ -38,19 +38,19 @@ def calcular_media_de_alunos_por_turma():
     """Escreva aqui em baixo a sua solução"""
 
     n_turma = int(input('Digite o nº de turmas:'))
-    i = n_turma
+    i = 0
     soma = 0
     print(f'Número de turmas: {n_turma}')
 
 
-    while i > 0:
+    while i < n_turma:
         n_aluno = int(input('Digite o número de alunos'))
         if n_aluno < 1 or n_aluno > 40:
             print(f'Uma turma deve ter de 1 a 40 alunos, não é possível ter {n_aluno} alunos')
-            i += 1
+            i -= 1
         else:
             soma += n_aluno
-        i -= 1
+        i += 1
         
     media  = soma / n_turma
     
