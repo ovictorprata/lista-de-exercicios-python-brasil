@@ -47,9 +47,46 @@ Gabarito da Prova:
 """
 
 
-def corrigir(provas):
+def corrigir(*respostas):
     """Escreva aqui em baixo a sua solução"""
-    gabarito = ('Gabarito', 'A', 'B', 'C', 'D', 'E', 'E', 'D', 'C', 'B', 'A')
+    gabarito = ['Gabarito', 'A', 'B', 'C', 'D', 'E', 'E', 'D', 'C', 'B', 'A']
+    soma = 0
     i = 0
-    for (nome, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10) in provas:
-        print(nome, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10)
+    nomes = []
+    notas=[]
+
+    print(f'Aluno                 Nota')
+    for (nome, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10) in respostas:
+        nomes.append(nome)
+        
+        if r1 == gabarito[i+1]:
+            soma += 1
+        if r2 == gabarito[i+2]:
+            soma += 1
+        if r3 == gabarito[i+3]:
+            soma += 1
+        if r4 == gabarito[i+4]:
+            soma += 1
+        if r5 == gabarito[i+5]:
+            soma += 1
+        if r6 == gabarito[i+6]:
+            soma += 1
+        if r7 == gabarito[i+7]:
+            soma += 1
+        if r8 == gabarito[i+8]:
+            soma += 1
+        if r9 == gabarito[i+9]:
+            soma += 1
+        if r10 == gabarito[i+10]:
+            soma += 1
+        print(f'{nome}                 {soma}')
+        notas.append(soma)
+        soma = 0
+        media = sum(notas) / len(respostas)
+  
+    print(f'---------------------------')
+    print(f'Média geral: {media:.1f}')
+    print(f'Maior nota: {max(notas)}')
+    print(f'Menor nota: {min(notas)}')
+    print(f'Total de Alunos: {len(respostas)}')
+    

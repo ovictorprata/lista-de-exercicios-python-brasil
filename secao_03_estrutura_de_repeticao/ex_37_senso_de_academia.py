@@ -1,7 +1,7 @@
 """
+
 Exercício 37 da seção de estrutura sequencial da Python Brasil:
 https://wiki.python.org.br/EstruturaDeRepeticao
-
 Uma academia deseja fazer um senso entre seus clientes para descobrir o mais alto, o mais baixo, a mais gordo e o mais 
 magro, para isto você deve fazer um programa que pergunte a cada um dos clientes da academia seu nome, sua altura e 
 seu peso. 
@@ -56,3 +56,56 @@ da média das alturas e dos pesos dos clientes
 
 def rodar_senso():
     """Escreva aqui em baixo a sua solução"""
+    nomes = []
+    alturas = []
+    pesos = []
+    altura_max = 0
+    altura_min = -1
+    peso_max = 0
+    peso_min = -1
+
+    while True:
+        inp = input('Digite o nome: ')
+        if inp == '0':
+            break
+        nomes.append(inp)
+        inp = input('Digite a altura: ')
+        if inp == '0':
+            break
+        alturas.append(int(inp))
+        inp = input('Digite o peso: ')
+        if inp == '0':
+            break
+        pesos.append(int(inp))
+
+    for altura in alturas:
+        if altura > altura_max:
+            altura_max = altura
+        if altura < altura_min or altura_min == -1:
+            altura_min = altura
+    
+    for peso in pesos:
+        if peso > peso_max:
+            peso_max = peso
+        if peso < peso_min or peso_min == -1:
+            peso_min = peso
+
+
+    nome_alto = nomes[(alturas.index(altura_max))]
+    nome_baixo = nomes[(alturas.index(altura_min))]
+    nome_gordo = nomes[(pesos.index(peso_max))]
+    nome_magro = nomes[(pesos.index(peso_min))]
+
+    media_altura = sum(alturas) / len(alturas)
+    media_peso = sum(pesos) / len(pesos)
+
+    print(f'Cliente mais alto: {nome_alto}, com {max(alturas)} centímetros')
+    print(f'Cliente mais baixo: {nome_baixo}, com {min(alturas)} centímetros')
+    print(f'Cliente mais magro: {nome_magro}, com {min(pesos)} kilos')
+    print(f'Cliente mais gordo: {nome_gordo}, com {max(pesos)} kilos')
+    print(f'--------------------------------------------------')
+    print(f'Media de altura dos clientes: {media_altura:.1f} centímetros')
+    print(f'Media de peso dos clientes: {media_peso:.1f} kilos')
+
+    
+

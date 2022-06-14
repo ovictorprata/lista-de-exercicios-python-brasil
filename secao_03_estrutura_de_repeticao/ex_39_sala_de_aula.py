@@ -20,4 +20,19 @@ from posixpath import split
 
 def calcular_aluno_mais_baixo_e_mais_alto(*alunos) -> str:
     """Escreva aqui em baixo a sua solução"""
-    print(alunos)
+    mais_alto = ''
+    mais_baixo = ''
+    altura_alto = 0
+    altura_baixo = -1
+    for (nome, altura) in alunos:
+        if altura > altura_alto:
+            altura_alto = altura
+            mais_alto = nome
+    
+        if altura < altura_baixo or altura_baixo == -1:
+            altura_baixo = altura
+            mais_baixo = nome
+    print(f"'O maior aluno é o {mais_alto} com {altura_alto} cm. O menor aluno é o {mais_baixo} com {altura_baixo} cm'")
+
+
+

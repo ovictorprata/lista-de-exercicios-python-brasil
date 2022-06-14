@@ -36,7 +36,6 @@ Arredonde o valor da média para baixo.
 
 def calcular_media_de_alunos_por_turma():
     """Escreva aqui em baixo a sua solução"""
-
     n_turma = int(input('Digite o nº de turmas:'))
     i = 0
     soma = 0

@@ -109,4 +109,59 @@ comprados.
 
 def fechar_conta(*itens):
     """Escreva aqui em baixo a sua solução"""
-    print(itens)
+    cardapio = {
+        '100': ('Cachorro Quente', '1.20'),
+        '101': ('Bauru Simples', '1.30'),
+        '102': ('Bauru com ovo', '1.50'),
+        '103': ('Hambúrguer', '1.20'),
+        '104': ('Cheeseburguer', '1.30'),
+        '105': ('Refrigerante ', '1.00'),
+    }
+    total_produto = 0
+    total_qnt = 0
+
+    #CABEÇALHO====================================================================================
+    print(f'_____________________________________________________________________________')
+    print(f'|                              RESUMO DA CONTA                              |')
+    print(f'|---------------------------------------------------------------------------|')
+    print(f'| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')
+    #=============================================================================================
+
+#criar ouro for com pedidos
+
+    pedidos = []
+    
+
+    for(codigo, quantidade) in itens:
+        produto, valor = cardapio[codigo]
+        #print(produto, valor)
+
+        item_atual = [produto, codigo, valor, int(quantidade), int(quantidade) * float(valor)]
+        item_novo = True
+
+        for item in pedidos:
+            if item[1] == codigo:
+                item[3] += int(quantidade)
+                item[4] += int(quantidade) * float(valor)
+                item_atual = item
+                item_novo = False
+           
+                
+        if item_novo == True: #nao precisa do true       
+            pedidos.append(item_atual)
+
+
+    for (produto, codigo, valor, quantidade, total_produto) in pedidos:
+        # total_produto = int(quantidade) * float(valor)        
+        total_qnt += total_produto
+
+        print(f'| {produto}'.ljust(18), f'| {codigo}    | {valor}                |          {quantidade} |       {total_produto:.2f} |')
+
+
+
+    #RODAPÉ======================================================================================
+    print(f'|---------------------------------------------------------------------------|')
+    print(f'| Total Geral:                                    |         {total_produto:2} |'.ljust(60), f'     {total_qnt} |')
+    print(f'-----------------------------------------------------------------------------')
+    #============================================================================================= 
+

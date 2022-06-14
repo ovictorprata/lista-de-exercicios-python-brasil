@@ -26,20 +26,46 @@ Mostre os valores com uma casa decimail
 """
 
 
+from statistics import median_grouped
+
+
 def calcular_estatisticas(*cidades):
     """Escreva aqui em baixo a sua solução"""
-    print(cidades)
-    cidade_1 = cidades[0]
-    cidade_2 = cidades[1]
-    cidade_3 = cidades[2]
-    cidade_4 = cidades[3]
-    cidade_5 = cidades[4]
-
-    print(cidade_1)
-
+    menor_indice = -1
+    maior_indice = 0
+    total = 0
+    total_veiculos = 0
+    n_cidade = 0
+    acidentes_pequena = 0
+    n_pequenas = 0
 
 
-    print(f'O maior índice de acidentes é de FL, com 6.0 acidentes por mil carros.')
-    print(f'O menor índice de acidentes é de FZ, com 1.2 acidentes por mil carros.')
-    print(f'O média de veículos por cidade é de 548000.')
-    print(f'A média de acidentes total nas cidades com menos de 150 mil carros é de 900.0 acidentes.')
+    for (cidade, veiculos, acidentes) in cidades:
+        indice = acidentes / veiculos * 1000
+        n_cidade += 1
+        total += veiculos
+        total_veiculos += veiculos
+        
+        
+        #MAIOR INDICE
+        if indice > maior_indice:
+            maior_indice = indice
+            maior_cidade = cidade
+
+        #MENOR INDICE
+        if indice < menor_indice or menor_indice == -1:
+            menor_indice = indice
+            menor_cidade = cidade
+        
+        if veiculos <= 150_000:
+            acidentes_pequena += acidentes
+            n_pequenas += 1
+
+    media = total_veiculos / n_cidade 
+    media_pequena = acidentes_pequena / n_pequenas
+
+    print(f'O maior índice de acidentes é de {maior_cidade}, com {maior_indice:.1f} acidentes por mil carros.')
+    print(f'O menor índice de acidentes é de {menor_cidade}, com {menor_indice:.1f} acidentes por mil carros.')
+    print(f'O média de veículos por cidade é de {media:.0f}.')
+    print(f'A média de acidentes total nas cidades com menos de 150 mil carros é de {media_pequena:.1f} acidentes.')
+

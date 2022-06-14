@@ -65,7 +65,7 @@ def rodar_programa_de_caixa():
         valor_produto = float(input('Digite o valor do produto:'))
         lista.append(valor_produto)
 
-        if sum(lista) == -1:
+        if lista[0] == -1:
             print(f'Lojas Tabajara')
             print(f'-------------------')
             i += 1
@@ -85,7 +85,6 @@ def rodar_programa_de_caixa():
                 total = 0
             else:
                 total += valor_produto
-    
     print(f'Programa encerrado!')
         
     
