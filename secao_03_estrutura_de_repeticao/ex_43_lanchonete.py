@@ -112,20 +112,27 @@ def fechar_conta(*itens):
     cardapio = {
         '100': ('Cachorro Quente', '1.20'),
         '101': ('Bauru Simples', '1.30'),
-        '102': ('Bauru com ovo', '1.50'),
-        '103': ('Hambúrguer', '1.20'),
+        '102': ('Bauru com Ovo', '1.50'),
+        '103': ('Hamburger', '1.20'),
         '104': ('Cheeseburguer', '1.30'),
         '105': ('Refrigerante ', '1.00'),
     }
     total_produto = 0
-    total_qnt = 0
+    preco_final = 0
+    soma_novo = 0
+    qnt_final = 0
 
     #CABEÇALHO====================================================================================
-    print(f'_____________________________________________________________________________')
-    print(f'|                              RESUMO DA CONTA                              |')
-    print(f'|---------------------------------------------------------------------------|')
-    print(f'| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')
-    #=============================================================================================
+    # print(f'_____________________________________________________________________________')
+    # print(f'|                              RESUMO DA CONTA                              |')
+    # print(f'|---------------------------------------------------------------------------|')
+    # print(f'| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')
+    # #=============================================================================================
+
+    print('_____________________________________________________________________________')
+    print('|                              RESUMO DA CONTA                              |')
+    print('|---------------------------------------------------------------------------|')
+    print('| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')
 
 #criar ouro for com pedidos
 
@@ -145,23 +152,28 @@ def fechar_conta(*itens):
                 item[4] += int(quantidade) * float(valor)
                 item_atual = item
                 item_novo = False
-           
+                soma_novo += int(quantidade)           
                 
         if item_novo == True: #nao precisa do true       
             pedidos.append(item_atual)
 
 
     for (produto, codigo, valor, quantidade, total_produto) in pedidos:
-        # total_produto = int(quantidade) * float(valor)        
-        total_qnt += total_produto
+        qnt_final += quantidade       
+        preco_final += total_produto
 
         print(f'| {produto}'.ljust(18), f'| {codigo}    | {valor}                |          {quantidade} |       {total_produto:.2f} |')
 
 
 
+
+
     #RODAPÉ======================================================================================
     print(f'|---------------------------------------------------------------------------|')
-    print(f'| Total Geral:                                    |         {total_produto:2} |'.ljust(60), f'     {total_qnt} |')
+    print(f'| Total Geral:                                    |      {qnt_final:5} |'.ljust(63), f'{preco_final:10.2f} |'.ljust(20))
     print(f'-----------------------------------------------------------------------------')
     #============================================================================================= 
+
+ 
+
 

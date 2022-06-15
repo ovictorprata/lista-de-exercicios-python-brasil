@@ -31,7 +31,7 @@ divisível somente por ele mesmo e por 1.
     True
     >>> eh_primo(547)
     True
-    >>> eh_primo(548)
+    >>> eh_primo(54800000000000000000)
     False
 
 """
