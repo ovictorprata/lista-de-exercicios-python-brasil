@@ -114,7 +114,7 @@ def fechar_conta(*itens):
         '101': ('Bauru Simples', '1.30'),
         '102': ('Bauru com Ovo', '1.50'),
         '103': ('Hamburger', '1.20'),
-        '104': ('Cheeseburguer', '1.30'),
+        '104': ('Cheeseburger', '1.30'),
         '105': ('Refrigerante ', '1.00'),
     }
     total_produto = 0
